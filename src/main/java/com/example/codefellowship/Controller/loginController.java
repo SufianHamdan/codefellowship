@@ -19,7 +19,7 @@ public class loginController {
     @Autowired
     ApplicationUserRepository applicationUserRepository;
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public String getLogin(Principal p, Model m) {
         try {
             ApplicationUser currentUser = applicationUserRepository.findUserByUserName(p.getName());
@@ -29,7 +29,8 @@ public class loginController {
 
         } catch (Exception e) {
             System.out.println(e);
-            System.out.println(57);
+            System.out.println("login failed - username incorrect");
+           return "error";
         }
         return "login";
     }

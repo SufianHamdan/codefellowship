@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Log-in</title>
 </head>
 <body>
-<form class="row g-3">
+<form class="row g-3" action="#" th:action="/login" method="post">
   <div class="col-auto">
-    <label for="staticEmail2" class="visually-hidden">Email</label>
-    <input type="text" class="form-control-plaintext" id="staticEmail2" placeholder="email@example.com">
+    <label for="username" class="visually-hidden">Email</label>
+    <input type="text" class="form-control" id="username" placeholder="User Name" name="username">
   </div>
   <div class="col-auto">
-    <label for="inputPassword2" class="visually-hidden">Password</label>
-    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+    <label for="password" class="visually-hidden">Password</label>
+    <input type="password" class="form-control" id="password" placeholder="Password" name="password">
   </div>
   <div class="col-auto">
     <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>

@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.security.Principal;
 import java.util.Date;
 
 @Controller
@@ -47,4 +48,20 @@ public class signUpController {
         SecurityContextHolder.getContext().setAuthentication(authToken);
         return new RedirectView("/userDetail");
     }
+
+    @GetMapping("/signup")
+    public String getSignup(Principal p, Model m) {
+        try {
+            ApplicationUser currentUser = applicationUserRepository.findUserByUserName(p.getName());
+            if (currentUser != null) {
+                new RedirectView("/userdetail");
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+            System.out.println("user invalid");
+        }
+        return "signup";
+    }
 }
+
