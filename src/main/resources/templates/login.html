@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>Log-in</title>
-</head>
+  <head th:replace="fragments/fragments :: head"></head>
 <body>
-<form class="row g-3" action="#" th:action="/login" method="post">
+
+<div th:replace="fragments/fragments :: navbar"></div>
+<div th:replace="fragments/fragments :: header"></div>
+
+
+<form class="row g-3" action="/login" method="POST">
   <div class="col-auto">
     <label for="username" class="visually-hidden">Email</label>
     <input type="text" class="form-control" id="username" placeholder="User Name" name="username">

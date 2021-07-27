@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="fragments/fragments :: head"></head>
+<body>
+
+<div th:replace="fragments/fragments :: navbar"></div>
+<div th:replace="fragments/fragments :: header"></div>
+
+<form th:action="'/post/' + ${displayedUser.id}" method="POST">
+<div class="mb-3">
+    <label for="body" class="form-label">Post</label>
+    <textarea class="form-control" id="body" rows="3" name="body"></textarea>
+</div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Post</button>
+    </div>
+</form>
+
+<div th:replace="fragments/fragments :: posts"></div>
+</body>
+</html>

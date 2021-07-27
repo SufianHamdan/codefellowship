@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/fragments :: head"></head>
+<body>
+<div th:replace="fragments/fragments :: navbar"></div>
+<div th:replace="fragments/fragments :: header"></div>
+
+<form method="POST" th:action="@{/signup}">
+<div class="mb-3" >
+  <label for="userName" class="form-label">Username</label>
+  <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" id="userName" name="userName">
+  <label for="password" class="form-label">Password</label>
+  <input type="password" class="form-control" id="password" name="password">
+  <label for="firstName" class="form-label">First Name</label>
+  <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" id="firstName" name="firstName">
+  <label for="lastName" class="form-label">Last Name</label>
+  <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" id="lastName" name="lastName">
+  <label for="dateOfBirth" class="form-label">Date</label>
+  <input class="form-control" type="date" placeholder="Default input" aria-label="default input example" id="dateOfBirth" name="dateOfBirth">
+</div>
+<div class="mb-3">
+  <label for="bio" class="form-label">Bio</label>
+  <textarea class="form-control" id="bio" rows="3" name="bio"></textarea>
+
+  <input type="submit" value="Submit" class="primary">
+</div>
+</form>
+</body>
+</html>
