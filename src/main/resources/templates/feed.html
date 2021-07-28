@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments/fragments :: head"></head>
+<body>
+<div th:replace="fragments/fragments :: navbar"></div>
+<div th:replace="fragments/fragments :: header"></div>
+
+<div th:each="user : ${userObj.getFollowing()}">
+    <div th:each="post : ${user.posts}">
+
+        <a th:href="@{/user/{id}(id = ${user.getId()})}" methods="get">
+            <p th:text="${user.getUsername()}"></p>
+        </a>
+
+        <p th:text="${post.createdAt}"></p>
+        <p th:text="${post.body}"></p>
+    </div>
+</div>
+
+</body>
+</html>
