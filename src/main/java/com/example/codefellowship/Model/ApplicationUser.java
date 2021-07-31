@@ -139,6 +139,4 @@ public class ApplicationUser implements UserDetails {
         this.bio = bio;
     }
 
-
-
 }

@@ -10,6 +10,7 @@
 
 <h2>Welcome! Your account details are displayed below.</h2>
 <h3 th:text = "'Username: ' + ${displayedUser.getUsername()}"></h3>
+<img src="../static/images/profile.jpg" th:src="@{/images/profile.jpg}" th:alt="${displayedUser.getUsername()}" style="width: 150px; height: 150px;"/>
 <p th:text = "'First Name: ' + ${displayedUser.getFirstName()}"></p>
 <p th:text = "'Last Name: ' + ${displayedUser.lastName}"></p>
 <p th:text = "'Date of Birth: ' + ${displayedUser.dateOfBirth}"></p>
